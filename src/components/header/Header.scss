@@ -1,0 +1,30 @@
+.header {
+  background-color: black;
+  width: 100%;
+  margin-top: 0;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  align-items: center;
+  display: flex;
+
+  &__center {
+    align-items: center;
+    display: flex;
+    margin: auto;
+  }
+  &__h1 {
+    text-align: center;
+    font-size: 2rem;
+    color: #b9ff66;
+    font-family: "Space Grotesk", sans-serif;
+  }
+
+  &__logo__left {
+    width: 5rem;
+    margin-right: 1.5rem;
+  }
+  &__logo__right {
+    width: 5rem;
+    margin-left: 1.5rem;
+  }
+}

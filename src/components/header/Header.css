@@ -1,0 +1,28 @@
+.header {
+  background-color: black;
+  width: 100%;
+  margin-top: 0;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  align-items: center;
+  display: flex;
+}
+.header__center {
+  align-items: center;
+  display: flex;
+  margin: auto;
+}
+.header__h1 {
+  text-align: center;
+  font-size: 2rem;
+  color: #b9ff66;
+  font-family: "Space Grotesk", sans-serif;
+}
+.header__logo__left {
+  width: 5rem;
+  margin-right: 1.5rem;
+}
+.header__logo__right {
+  width: 5rem;
+  margin-left: 1.5rem;
+}/*# sourceMappingURL=header.css.map */
