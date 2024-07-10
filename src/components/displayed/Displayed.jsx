@@ -1,15 +1,16 @@
-import React, { useEffect } from "react";
+// ImageGallery.jsx
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   getImagesThunk,
   getSearchedImagesThunk,
-} from "../images/imageThunk.js";
+} from "../../features/images/imageThunk.js";
 import {
   imagesDataSelector,
   imagesStatusSelector,
   imagesErrorSelector,
-} from "../images/imageSlice.js";
-import SearchInput from "../SearchInput/SearchInput.jsx";
+} from "../../features/images/imageSlice.js";
+import SearchBar from "../SearchBar/SearchBar.jsx";
 import "./displayed.scss";
 
 const ImageGallery = () => {
@@ -17,7 +18,7 @@ const ImageGallery = () => {
   const images = useSelector(imagesDataSelector);
   const status = useSelector(imagesStatusSelector);
   const error = useSelector(imagesErrorSelector);
-  const [query, setQuery] = React.useState("");
+  const [query, setQuery] = useState("");
 
   useEffect(() => {
     if (query === "") {
@@ -27,13 +28,13 @@ const ImageGallery = () => {
     }
   }, [query, dispatch]);
 
-  const handleSearchChange = (event) => {
-    setQuery(event.target.value);
+  const handleSearchChange = (searchQuery) => {
+    setQuery(searchQuery);
   };
 
   return (
     <div>
-      <SearchInput query={query} handleSearchChange={handleSearchChange} />
+      <SearchBar query={query} onSearchChange={handleSearchChange} />
       {status === "pending" && <p>Loading...</p>}
       {status === "rejected" && <p>Error: {error.message}</p>}
       <div className="image-gallery">

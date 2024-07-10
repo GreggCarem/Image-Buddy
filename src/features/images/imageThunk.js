@@ -4,7 +4,7 @@ export const getImagesThunk = createAsyncThunk(
   "images/getRandomImagesFromApi",
   async () => {
     const request = await fetch(
-      `https://api.unsplash.com/photos/random?count=10&client_id=${import.meta.env.VITE_KEY}`
+      `https://api.unsplash.com/photos/random?count=12&client_id=${import.meta.env.VITE_KEY}`
     );
     if (request.ok) {
       const data = await request.json();
@@ -20,7 +20,7 @@ export const getSearchedImagesThunk = createAsyncThunk(
   async (query) => {
     if (query === "") {
       const request = await fetch(
-        `https://api.unsplash.com/photos/random?count=10&client_id=${import.meta.env.VITE_KEY}`
+        `https://api.unsplash.com/photos/random?count=12&client_id=${import.meta.env.VITE_KEY}`
       );
       if (request.ok) {
         const data = await request.json();
@@ -30,7 +30,7 @@ export const getSearchedImagesThunk = createAsyncThunk(
       }
     } else {
       const request = await fetch(
-        `https://api.unsplash.com/search/photos?client_id=${import.meta.env.VITE_KEY}&per_page=10&query=${query}`
+        `https://api.unsplash.com/search/photos?client_id=${import.meta.env.VITE_KEY}&per_page=12&query=${query}`
       );
       if (request.ok) {
         const data = await request.json();
