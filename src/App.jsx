@@ -1,19 +1,15 @@
-import Footer from "./components/footer/Footer";
-import Header from "./components/header/Header";
-//import Load from "./components/load/Load";
-//import Tools from "./components/tools/Tools.jsx";
-s;
-import ImageGallery from "./components/displayed/ImageGallery.jsx";
+import { Route, Routes } from "react-router-dom";
+import { Home } from "./pages/Home.jsx";
+import { Saved } from "./pages/Saved.jsx";
 
 function App() {
   console.log("key", import.meta.env.VITE_KEY);
   return (
     <>
-      <Header />
-
-      <ImageGallery />
-
-      <Footer />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/Saved" element={<Saved />} />
+      </Routes>
     </>
   );
 }
