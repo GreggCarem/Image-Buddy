@@ -1,8 +1,6 @@
 .footer {
   background-color: black;
   width: 100%;
-  position: absolute;
-  bottom: 0;
   display: flex;
   padding-top: 1.5rem;
   border-radius: 15px 15px 0px 0px;
@@ -16,9 +14,7 @@
   top: -0.6rem;
 }
 .footer__links {
-  right: 2rem;
-  position: inherit;
-  top: 1rem;
+  margin-left: 80%;
 }
 .footer__linkedin {
   width: 2rem;
