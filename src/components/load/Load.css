@@ -1,18 +1,16 @@
 .load__more {
   background-color: #b9ff66;
-  width: 10%;
-  position: sticky;
-  margin-top: 29.5rem;
+  padding: 11px 16px;
+  position: relative;
   display: flex;
-  border-radius: 60px 60px 60px 60px;
+  border-radius: 60px;
   box-shadow: rgba(0, 0, 0, 0.45) 2px 18px 12px 18px;
   z-index: 1;
-  margin-left: auto;
-  margin-right: auto;
-}
-.load__more__h1 {
-  margin-left: 0.7rem;
-  font-size: 1rem;
   color: #000000;
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Space Grotesk";
+  font-weight: bold;
+  font-size: 1.3rem;
+  bottom: -3rem;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }/*# sourceMappingURL=Load.css.map */

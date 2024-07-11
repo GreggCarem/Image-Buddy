@@ -1,11 +1,12 @@
 import "./Load.scss";
-function Load() {
+function loadMoreButton({ onLoadMore }) {
   return (
     <>
-      <div className="load__more">
-        <h1 className="load__more__h1">Load More </h1>
-      </div>
+      <button className="load__more" onClick={onLoadMore}>
+        {" "}
+        Load More{" "}
+      </button>
     </>
   );
 }
-export default Load;
+export default loadMoreButton;

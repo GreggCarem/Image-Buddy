@@ -11,5 +11,4 @@ function Saved() {
   );
 }
 
-export default Saved;
 export { Saved };

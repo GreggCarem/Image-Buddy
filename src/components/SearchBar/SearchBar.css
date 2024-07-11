@@ -3,10 +3,8 @@
   font-size: 1.7rem;
   background-color: white;
   outline: #4f9000;
-  width: 35rem;
-  height: 47px;
   border-radius: 59px;
-  box-shadow: rgba(0, 0, 0, 0.75) 6px 14px 18px 4px;
+  box-shadow: rgba(0, 0, 0, 0.75) 7px 6px 18px 4px;
   border: none;
-  padding-left: 1.1rem;
+  padding: 0.4rem 2rem;
 }/*# sourceMappingURL=SearchBar.css.map */

@@ -1,8 +1,23 @@
-import React, { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import "../sort/SortOptions.scss";
 
 const SortOptions = ({ sortOption, onSortChange }) => {
   const [isOptionsVisible, setIsOptionsVisible] = useState(false);
+  const optionsRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (optionsRef.current && !optionsRef.current.contains(event.target)) {
+        setIsOptionsVisible(false);
+      }
+    };
+
+    //closes clicking outside of filter
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   const toggleOptions = () => {
     setIsOptionsVisible(!isOptionsVisible);
@@ -14,21 +29,24 @@ const SortOptions = ({ sortOption, onSortChange }) => {
   };
 
   return (
-    <div className="sort-options">
+    <div className="sort">
       <div className="filter-icon" onClick={toggleOptions}>
         <img src={"/images/filter.png"} alt="Filter" />
         {isOptionsVisible && (
-          <div className="options-container">
-            <div className="option" onClick={() => handleOptionClick("width")}>
+          <div className="option-main" ref={optionsRef}>
+            <div className="options" onClick={() => handleOptionClick("width")}>
               Width
             </div>
-            <div className="option" onClick={() => handleOptionClick("height")}>
+            <div
+              className="options"
+              onClick={() => handleOptionClick("height")}
+            >
               Height
             </div>
-            <div className="option" onClick={() => handleOptionClick("date")}>
+            <div className="options" onClick={() => handleOptionClick("date")}>
               Date
             </div>
-            <div className="option" onClick={() => handleOptionClick("likes")}>
+            <div className="options" onClick={() => handleOptionClick("likes")}>
               Likes
             </div>
           </div>

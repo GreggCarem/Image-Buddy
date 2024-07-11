@@ -1,16 +1,19 @@
-import React, { useEffect, useState } from "react";
+import "./ImageGallery.scss";
+import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   getImagesThunk,
   getSearchedImagesThunk,
+  loadMoreImagesThunk,
 } from "../../features/images/imageThunk.js";
 import {
   imagesDataSelector,
   imagesStatusSelector,
   imagesErrorSelector,
 } from "../../features/images/imageSlice.js";
+
 import Tools from "../tools/Tools.jsx";
-import "./ImageGallery.scss";
+import LoadMoreButton from "../load/Load.jsx";
 
 const ImageGallery = () => {
   const dispatch = useDispatch();
@@ -34,6 +37,10 @@ const ImageGallery = () => {
 
   const handleSortChange = (option) => {
     setSortOption(option);
+  };
+
+  const loadMoreImages = () => {
+    dispatch(loadMoreImagesThunk());
   };
 
   const sortedImages = [...images].sort((a, b) => {
@@ -70,6 +77,7 @@ const ImageGallery = () => {
           />
         ))}
       </div>
+      <LoadMoreButton onLoadMore={loadMoreImages} />
     </div>
   );
 };
