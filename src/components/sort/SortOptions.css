@@ -2,20 +2,20 @@
   position: relative;
 }
 
-.filter-icon {
+.filter__icon {
   position: relative;
   cursor: pointer;
   display: flex;
   align-items: center;
 }
 
-.filter-icon img {
+.filter__icon img {
   width: 24px;
   height: 24px;
   margin-right: 5px;
 }
 
-.option-main {
+.option__main {
   position: absolute;
   top: calc(100% + 27px);
   left: -54px;

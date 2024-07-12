@@ -1,19 +1,28 @@
 import "./ImageGallery.scss";
+
+//main States
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+
+//API Thunks
 import {
   getImagesThunk,
   getSearchedImagesThunk,
   loadMoreImagesThunk,
 } from "../../features/images/imageThunk.js";
+
+//API Slices
 import {
   imagesDataSelector,
   imagesStatusSelector,
   imagesErrorSelector,
 } from "../../features/images/imageSlice.js";
 
+//Import components
 import Tools from "../tools/Tools.jsx";
 import LoadMoreButton from "../load/Load.jsx";
+import InfoButton from "../information/information.jsx";
+import DownloadButton from "../download/DownloadBtn.jsx";
 
 const ImageGallery = () => {
   const dispatch = useDispatch();
@@ -59,7 +68,7 @@ const ImageGallery = () => {
   });
 
   return (
-    <div>
+    <>
       <Tools
         query={query}
         onSearchChange={handleSearchChange}
@@ -68,17 +77,22 @@ const ImageGallery = () => {
       />
       {status === "pending" && <p>Loading...</p>}
       {status === "rejected" && <p>Error: {error.message}</p>}
-      <div className="image-gallery">
+      <div className="image__gallery">
         {sortedImages.map((image) => (
-          <img
-            key={image.id}
-            src={image.urls.small}
-            alt={image.alt_description}
-          />
+          <div key={image.id} className="image__container">
+            <InfoButton image={image} />
+
+            <img
+              src={image.urls.small}
+              alt={image.alt_description}
+              className="gallery__image"
+            />
+            <DownloadButton image={image} />
+          </div>
         ))}
       </div>
       <LoadMoreButton onLoadMore={loadMoreImages} />
-    </div>
+    </>
   );
 };
 

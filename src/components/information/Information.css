@@ -1,0 +1,102 @@
+.image__modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(31, 34, 29, 0.89);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.modal__content {
+  border: 37px solid black;
+  background-color: #b9ff66;
+  border-radius: 50px;
+  max-width: 55rem;
+  max-height: 30rem;
+  overflow: auto;
+  z-index: 10;
+  padding-left: 1rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  display: flex;
+}
+
+.image__modal img {
+  max-width: 30rem;
+  max-height: 30rem;
+}
+
+.image__details {
+  margin-top: 10px;
+}
+
+.description__editor__h1 {
+  text-align: center;
+  top: 2.5rem;
+  margin-top: -1.8rem;
+  margin-bottom: -34px;
+  z-index: 5;
+  position: relative;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 3rem;
+}
+
+.description__editor textarea {
+  width: 23rem;
+  height: 22rem;
+  margin-left: 1rem;
+  border-radius: 45px;
+  padding-top: 5rem;
+  text-align: center;
+  background-color: rgb(215, 215, 215);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.2rem;
+}
+
+.modal__dimensions {
+  margin-left: -12rem;
+  margin-top: -1rem;
+}
+
+.save__button {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  background: none;
+  border: none;
+  right: 22rem;
+  bottom: 12.5rem;
+}
+.save__button__logo {
+  background: none;
+  border: none;
+  width: 24px;
+  height: 24px;
+}
+
+.info__button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  position: absolute;
+  right: -1px;
+}
+.info__button img {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
+.download__button__modal {
+  position: absolute;
+  bottom: 13rem;
+  right: 17.8rem;
+}/*# sourceMappingURL=Information.css.map */

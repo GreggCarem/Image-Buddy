@@ -5,14 +5,13 @@ const SortOptions = ({ sortOption, onSortChange }) => {
   const [isOptionsVisible, setIsOptionsVisible] = useState(false);
   const optionsRef = useRef(null);
 
+  //closes clicking outside of filter
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (optionsRef.current && !optionsRef.current.contains(event.target)) {
         setIsOptionsVisible(false);
       }
     };
-
-    //closes clicking outside of filter
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
@@ -30,10 +29,10 @@ const SortOptions = ({ sortOption, onSortChange }) => {
 
   return (
     <div className="sort">
-      <div className="filter-icon" onClick={toggleOptions}>
+      <div className="filter__icon" onClick={toggleOptions}>
         <img src={"/images/filter.png"} alt="Filter" />
         {isOptionsVisible && (
-          <div className="option-main" ref={optionsRef}>
+          <div className="option__main" ref={optionsRef}>
             <div className="options" onClick={() => handleOptionClick("width")}>
               Width
             </div>

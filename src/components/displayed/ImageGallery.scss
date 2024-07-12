@@ -1,11 +1,21 @@
-.image-gallery {
+.image__gallery {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.3rem;
-  margin: 0.5rem;
+  gap: 0.5rem;
+  margin-top: 0.6rem;
+  justify-content: space-evenly;
+}
 
-  img {
-    width: calc(25% - 3.75px);
-    object-fit: cover;
-  }
+.image__container {
+  position: relative;
+  width: calc(25% - 20px);
+  height: 250px;
+  overflow: hidden;
+}
+
+.gallery__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }

@@ -1,19 +1,18 @@
-.download-button {
+.download__button {
   position: absolute;
-  bottom: 10px;
-  right: 10px;
+  bottom: -5px;
+  right: -5px;
   background-color: rgba(255, 255, 255, 0.8);
   padding: 5px;
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-}
+  background: none;
+  border: none;
 
-.download-button:hover {
-  background-color: rgba(255, 255, 255, 1);
-}
-
-.download-button img {
-  width: 20px;
-  height: 20px;
+  &__image {
+    display: block;
+    width: 24px;
+    height: 24px;
+  }
 }
