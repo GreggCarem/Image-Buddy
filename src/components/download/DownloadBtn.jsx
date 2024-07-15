@@ -9,7 +9,7 @@ const DownloadButton = ({ image }) => {
       .then((blob) => {
         saveAs(blob, `${image.alt_description}.jpg`);
       })
-      .catch((error) => console.error("Error downloading", error));
+      .catch((error) => console.error(error));
   };
 
   return (

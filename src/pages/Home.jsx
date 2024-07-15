@@ -5,7 +5,6 @@ import Header from "../components/header/Header.jsx";
 import ImageGallery from "../components/displayed/ImageGallery.jsx";
 
 function Home() {
-  console.log("key", import.meta.env.VITE_KEY);
   return (
     <>
       <Header />

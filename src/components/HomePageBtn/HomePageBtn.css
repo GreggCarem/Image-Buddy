@@ -1,0 +1,16 @@
+.home__button {
+  display: block;
+  margin: 20px;
+  text-align: center;
+}
+.home__button button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+.home__button button img {
+  display: block;
+  width: 24px;
+  height: 24px;
+}/*# sourceMappingURL=HomePageBtn.css.map */

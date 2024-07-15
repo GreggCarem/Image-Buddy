@@ -3,7 +3,6 @@ import { Home } from "./pages/Home.jsx";
 import { Saved } from "./pages/Saved.jsx";
 
 function App() {
-  console.log("key", import.meta.env.VITE_KEY);
   return (
     <>
       <Routes>

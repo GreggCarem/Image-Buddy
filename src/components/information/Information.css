@@ -22,12 +22,14 @@
   padding-left: 1rem;
   padding-top: 2rem;
   padding-bottom: 2rem;
+  padding-right: 1rem;
   display: flex;
 }
 
 .image__modal img {
   max-width: 30rem;
   max-height: 30rem;
+  object-fit: cover;
 }
 
 .image__details {
@@ -58,27 +60,27 @@
 }
 
 .modal__dimensions {
-  margin-left: -12rem;
-  margin-top: -1rem;
+  margin-left: -15rem;
+  margin-top: -3rem;
 }
 
 .save__button {
-  position: absolute;
+  position: relative;
   background-color: rgba(255, 255, 255, 0.8);
   padding: 5px;
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
   background: none;
   border: none;
-  right: 22rem;
-  bottom: 12.5rem;
+  right: -19.5rem;
+  bottom: 5.4rem;
 }
-.save__button__logo {
+.save__button img {
   background: none;
   border: none;
   width: 24px;
   height: 24px;
+  cursor: pointer;
 }
 
 .info__button {
@@ -96,7 +98,19 @@
 }
 
 .download__button__modal {
-  position: absolute;
-  bottom: 13rem;
-  right: 17.8rem;
+  position: relative;
+  bottom: 3.7rem;
+  left: -10.8rem;
+}
+
+.like__button__modal {
+  position: relative;
+  bottom: 2.8rem;
+  right: -4rem;
+}
+
+.Like__number {
+  position: relative;
+  bottom: 0.1rem;
+  right: -2.2rem;
 }/*# sourceMappingURL=Information.css.map */

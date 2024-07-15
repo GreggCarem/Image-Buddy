@@ -1,40 +1,31 @@
-import "./ImageGallery.scss";
-
-import { useEffect, useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
-
-//  API Thunks
+import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import {
   getImagesThunk,
   getSearchedImagesThunk,
   loadMoreImagesThunk,
 } from "../../features/images/imageThunk.js";
-
-//  API
-import {
-  imagesDataSelector,
-  imagesStatusSelector,
-  imagesErrorSelector,
-} from "../../features/images/imageSlice.js";
-
-// Components
-import Tools from "../tools/Tools.jsx";
+import ToolsSaved from "../ToolsSaved/ToolsSaved.jsx";
 import LoadMoreButton from "../load/Load.jsx";
 import InfoButton from "../information/information.jsx";
 import DownloadButton from "../download/DownloadBtn.jsx";
 import LikeButton from "../like/LikeBtn.jsx";
+import "../displayed/ImageGallery.scss";
 
-// Components to Display
-const ImageGallery = () => {
+const SavedImages = () => {
   const dispatch = useDispatch();
-  const images = useSelector(imagesDataSelector);
-  const status = useSelector(imagesStatusSelector);
-  const error = useSelector(imagesErrorSelector);
+  const [likedImages, setLikedImages] = useState([]);
+  const [filteredImages, setFilteredImages] = useState([]);
   const [query, setQuery] = useState("");
   const [sortOption, setSortOption] = useState("date");
-  const [likes, setLikes] = useState({});
 
-  // Fetch images
+  // Fetch liked images from localStorage on
+  useEffect(() => {
+    const images = JSON.parse(localStorage.getItem("likedImages")) || [];
+    setLikedImages(images);
+    setFilteredImages(images); // Filter Images
+  }, []);
+
   useEffect(() => {
     if (query === "") {
       dispatch(getImagesThunk());
@@ -43,40 +34,35 @@ const ImageGallery = () => {
     }
   }, [query, dispatch]);
 
-  // Search
   const handleSearchChange = (searchQuery) => {
     setQuery(searchQuery);
+    const filtered = likedImages.filter((image) =>
+      image.alt_description.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+    setFilteredImages(filtered);
   };
 
-  //Sort options
+  // Sort option change
   const handleSortChange = (option) => {
     setSortOption(option);
   };
 
-  // Load More images
+  // Load more images
   const loadMoreImages = () => {
     dispatch(loadMoreImagesThunk());
   };
 
-  //Like count
-  useEffect(() => {
-    const initialLikes = {};
-    images.forEach((image) => {
-      initialLikes[image.id] = image.likes;
-    });
-    setLikes(initialLikes);
-  }, [images]);
-
-  // Chmages in Liked
-  const handleLikeChange = (liked, imageId) => {
-    setLikes((prevLikes) => ({
-      ...prevLikes,
-      [imageId]: liked ? prevLikes[imageId] + 1 : prevLikes[imageId] - 1,
-    }));
+  // Unlike image
+  const handleUnlike = (id) => {
+    // Remove from likedImages
+    const updatedLikedImages = likedImages.filter((image) => image.id !== id);
+    setLikedImages(updatedLikedImages);
+    setFilteredImages(updatedLikedImages); // Update filteredImages after have been unliked
+    localStorage.setItem("likedImages", JSON.stringify(updatedLikedImages));
   };
 
-  //  Sort images
-  const sortedImages = [...images].sort((a, b) => {
+  // Sort images based on selected option
+  const sortedImages = [...filteredImages].sort((a, b) => {
     switch (sortOption) {
       case "width":
         return b.width - a.width;
@@ -93,41 +79,39 @@ const ImageGallery = () => {
 
   return (
     <>
-      <Tools
-        query={query}
+      <ToolsSaved
         onSearchChange={handleSearchChange}
         sortOption={sortOption}
         onSortChange={handleSortChange}
       />
-
-      {status === "pending" && <p>Loading...</p>}
-
-      {status === "rejected" && <p>Error: {error.message}</p>}
-
       <div className="image__gallery">
         {sortedImages.map((image) => (
           <div key={image.id} className="image__container">
-            <InfoButton image={image} />
-
+            <InfoButton
+              key={`info_${image.id}`}
+              image={image}
+              onUnlike={handleUnlike}
+            />
             <img
               src={image.urls.small}
               alt={image.alt_description}
               className="gallery__image"
+              key={`img_${image.id}`}
             />
-
             <LikeButton
+              key={`like_${image.id}`}
               image={image}
-              onLikeChange={(liked) => handleLikeChange(liked, image.id)}
+              onLikeChange={(liked) => {
+                if (!liked) handleUnlike(image.id);
+              }}
             />
-
-            <DownloadButton image={image} />
+            <DownloadButton key={`download_${image.id}`} image={image} />
           </div>
         ))}
       </div>
-
       <LoadMoreButton onLoadMore={loadMoreImages} />
     </>
   );
 };
 
-export default ImageGallery;
+export default SavedImages;

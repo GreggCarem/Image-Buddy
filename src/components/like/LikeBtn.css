@@ -1,15 +1,15 @@
-.download__button {
+.like__button {
   position: absolute;
   bottom: -5px;
-  right: -5px;
+  left: -5px;
   padding: 5px;
   border-radius: 4px;
   cursor: pointer;
   background: none;
   border: none;
 }
-.download__button img {
+.like__button img {
   display: block;
   width: 24px;
   height: 24px;
-}/*# sourceMappingURL=DownloadBtn.css.map */
+}/*# sourceMappingURL=LikeBtn.css.map */
