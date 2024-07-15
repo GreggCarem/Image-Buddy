@@ -24,6 +24,7 @@
   padding-bottom: 2rem;
   padding-right: 1rem;
   display: flex;
+  overflow: hidden;
 }
 
 .image__modal img {
@@ -113,4 +114,91 @@
   position: relative;
   bottom: 0.1rem;
   right: -2.2rem;
+}
+
+@media (max-width: 1000px) {
+  .image__modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(31, 34, 29, 0.89);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+  }
+  .modal__content {
+    border: 13px solid black;
+    border-radius: 50px;
+    width: 90%;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 8.5rem;
+    overflow: hidden;
+    padding-bottom: 2rem;
+  }
+  .image__modal img {
+    object-fit: cover;
+    margin: auto;
+    display: block;
+    width: 50%;
+    height: auto;
+    max-width: 100%;
+    max-height: max-content;
+    margin-bottom: 1rem;
+  }
+  .description__editor textarea {
+    width: 90%;
+    height: 6rem;
+    margin-left: 1rem;
+    border-radius: 45px;
+    padding-top: 5rem;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+  }
+  .description__editor__h1 {
+    text-align: center;
+    top: 2.5rem;
+    margin-top: -1.8rem;
+    margin-bottom: -34px;
+    z-index: 5;
+    position: relative;
+    font-size: 2rem;
+  }
+  .save__button {
+    padding: 5px;
+    border-radius: 4px;
+    left: 12rem;
+    top: -4.6rem;
+    position: relative;
+  }
+  .save__button img {
+    background: none;
+    border: none;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+  }
+  .download__button__modal {
+    bottom: 2.6rem;
+    left: -3.8rem;
+  }
+  .like__button__modal {
+    bottom: 1.6rem;
+  }
+  .Like__number {
+    position: relative;
+    bottom: 1.1rem;
+    right: -2.2rem;
+  }
+  .modal__dimensions {
+    position: relative;
+    top: -12.9rem;
+    text-align: center;
+    margin-left: 0;
+  }
 }/*# sourceMappingURL=Information.css.map */

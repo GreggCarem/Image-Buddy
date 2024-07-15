@@ -28,3 +28,29 @@
     height: auto;
   }
 }
+
+@media (max-width: 1000px) {
+  .footer {
+    padding-top: 0.5rem;
+
+    &__h1 {
+      font-size: 1rem;
+
+      left: 1rem;
+      top: -0.2rem;
+    }
+
+    &__links {
+      margin-left: 55%;
+      margin-top: 10px;
+    }
+    &__linkedin {
+      width: 1rem;
+
+      margin-right: 1.2rem;
+    }
+    &__github {
+      width: 1rem;
+    }
+  }
+}

@@ -14,3 +14,14 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+@media (max-width: 1000px) {
+  .load__more {
+    padding: 5px 8px;
+    position: relative;
+    display: flex;
+    border-radius: 60px;
+    font-size: 0.8rem;
+    bottom: -2rem;
+  }
+}

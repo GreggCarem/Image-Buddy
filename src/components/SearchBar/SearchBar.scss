@@ -9,3 +9,11 @@
   border: none;
   padding: 0.4rem 2rem;
 }
+
+@media (max-width: 1000px) {
+  .search {
+    padding: 0.7rem 0.3rem;
+    font-size: 1rem;
+    text-align: center;
+  }
+}

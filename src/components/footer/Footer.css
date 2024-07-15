@@ -24,4 +24,26 @@
 .footer__github {
   width: 2rem;
   height: auto;
+}
+
+@media (max-width: 1000px) {
+  .footer {
+    padding-top: 0.5rem;
+  }
+  .footer__h1 {
+    font-size: 1rem;
+    left: 1rem;
+    top: -0.2rem;
+  }
+  .footer__links {
+    margin-left: 55%;
+    margin-top: 10px;
+  }
+  .footer__linkedin {
+    width: 1rem;
+    margin-right: 1.2rem;
+  }
+  .footer__github {
+    width: 1rem;
+  }
 }/*# sourceMappingURL=Footer.css.map */

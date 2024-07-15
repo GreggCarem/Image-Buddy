@@ -8,4 +8,11 @@
   flex-wrap: nowrap;
   justify-content: space-evenly;
   align-items: center;
+}
+
+@media (max-width: 1000px) {
+  .green__box {
+    height: 4rem;
+    border-radius: 0px 0px 35px 35px;
+  }
 }/*# sourceMappingURL=Tools.css.map */

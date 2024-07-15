@@ -47,11 +47,6 @@ const SavedImages = () => {
     setSortOption(option);
   };
 
-  // Load more images
-  const loadMoreImages = () => {
-    dispatch(loadMoreImagesThunk());
-  };
-
   // Unlike image
   const handleUnlike = (id) => {
     // Remove from likedImages
@@ -84,7 +79,7 @@ const SavedImages = () => {
         sortOption={sortOption}
         onSortChange={handleSortChange}
       />
-      <div className="image__gallery">
+      <div className="image__gallery__saved">
         {sortedImages.map((image) => (
           <div key={image.id} className="image__container">
             <InfoButton
@@ -109,7 +104,6 @@ const SavedImages = () => {
           </div>
         ))}
       </div>
-      <LoadMoreButton onLoadMore={loadMoreImages} />
     </>
   );
 };

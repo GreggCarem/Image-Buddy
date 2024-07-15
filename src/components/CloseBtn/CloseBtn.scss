@@ -1,0 +1,20 @@
+.close__btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  right: -45rem;
+  top: -16rem;
+  img {
+    display: block;
+    width: 2rem;
+  }
+}
+
+@media (max-width: 1000px) {
+  .close__btn {
+    position: fixed;
+    right: 2rem;
+    top: 4.5rem;
+  }
+}

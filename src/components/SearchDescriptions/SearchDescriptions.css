@@ -7,4 +7,12 @@
   box-shadow: rgba(0, 0, 0, 0.75) 7px 6px 18px 4px;
   border: none;
   padding: 0.4rem 2rem;
+}
+
+@media (max-width: 1000px) {
+  .search__descriptions {
+    padding: 0.7rem 0.3rem;
+    font-size: 1rem;
+    text-align: center;
+  }
 }/*# sourceMappingURL=SearchDescriptions.css.map */

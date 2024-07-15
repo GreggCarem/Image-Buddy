@@ -5,6 +5,7 @@
   margin-top: 0.6rem;
   justify-content: space-evenly;
 }
+
 .image__gallery__saved {
   display: flex;
   flex-wrap: wrap;
@@ -43,4 +44,4 @@
     height: 144px;
     overflow: hidden;
   }
-}
+}/*# sourceMappingURL=ImageGallery.css.map */

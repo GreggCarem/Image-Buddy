@@ -25,4 +25,30 @@
 .header__logo__right {
   width: 5rem;
   margin-left: 1.5rem;
+}
+
+@media (max-width: 1000px) {
+  .header {
+    padding-top: 0.1rem;
+    padding-bottom: 0.1rem;
+  }
+  .header__center {
+    align-items: center;
+    display: flex;
+    margin: auto;
+  }
+  .header__h1 {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #b9ff66;
+    font-family: "Space Grotesk", sans-serif;
+  }
+  .header__logo__left {
+    width: 3rem;
+    margin-right: 1.5rem;
+  }
+  .header__logo__right {
+    width: 3rem;
+    margin-left: 1.5rem;
+  }
 }/*# sourceMappingURL=Header.css.map */
