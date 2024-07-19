@@ -22,15 +22,15 @@
   padding-left: 1rem;
   padding-top: 2rem;
   padding-bottom: 2rem;
-  padding-right: 1rem;
+  padding-right: 3rem;
   display: flex;
   overflow: hidden;
 }
 
 .image__modal img {
-  max-width: 30rem;
-  max-height: 30rem;
-  object-fit: cover;
+  width: 22rem;
+
+  object-fit: scale-down;
 }
 
 .image__details {
@@ -64,7 +64,7 @@
 
 .modal__dimensions {
   margin-left: -15rem;
-  margin-top: -3rem;
+  margin-top: -1rem;
 }
 
 .save__button {
@@ -76,7 +76,7 @@
   background: none;
   border: none;
   right: -19.5rem;
-  bottom: 5.4rem;
+  bottom: 6.6rem;
 
   img {
     background: none;
@@ -182,8 +182,8 @@
   .save__button {
     padding: 5px;
     border-radius: 4px;
-    left: 12rem;
-    top: -4.6rem;
+    left: 9rem;
+    top: -6.6rem;
     position: relative;
     img {
       background: none;
@@ -208,7 +208,7 @@
 
   .modal__dimensions {
     position: relative;
-    top: -12.9rem;
+    top: -14.9rem;
     text-align: center;
     margin-left: 0;
   }

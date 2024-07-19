@@ -1,6 +1,7 @@
 .saved__button {
   display: block;
   text-align: center;
+  margin-top: 0.5rem;
 }
 .saved__button button {
   background: none;
@@ -10,8 +11,8 @@
 }
 .saved__button button img {
   display: block;
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
 }
 
 @media (max-width: 1000px) {

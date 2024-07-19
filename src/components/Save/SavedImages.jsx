@@ -3,10 +3,9 @@ import { useDispatch } from "react-redux";
 import {
   getImagesThunk,
   getSearchedImagesThunk,
-  loadMoreImagesThunk,
 } from "../../features/images/imageThunk.js";
 import ToolsSaved from "../ToolsSaved/ToolsSaved.jsx";
-import LoadMoreButton from "../load/Load.jsx";
+
 import InfoButton from "../information/information.jsx";
 import DownloadButton from "../download/DownloadBtn.jsx";
 import LikeButton from "../like/LikeBtn.jsx";

@@ -5,7 +5,7 @@ const SavedPageBtn = () => {
   return (
     <Link to="/saved" className="saved__button">
       <button>
-        <img src="/images/SavePage.png" alt="" />
+        <img src="/images/Heart-page.png" alt="" />
       </button>
     </Link>
   );

@@ -3,11 +3,12 @@
   border: none;
   cursor: pointer;
   position: relative;
-  right: -45rem;
-  top: -16rem;
+  right: -47rem;
+  top: -15rem;
   img {
     display: block;
-    width: 2rem;
+    width: 1.3rem;
+    height: auto;
   }
 }
 
@@ -15,6 +16,6 @@
   .close__btn {
     position: fixed;
     right: 2rem;
-    top: 4.5rem;
+    top: 8.5rem;
   }
 }
