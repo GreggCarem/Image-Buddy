@@ -1,5 +1,3 @@
-import "./ImageGallery.scss";
-
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
@@ -32,6 +30,7 @@ const ImageGallery = () => {
   const error = useSelector(imagesErrorSelector);
   const [query, setQuery] = useState("");
   const [sortOption, setSortOption] = useState("date");
+  const [sortOrder, setSortOrder] = useState("desc"); // Add sortOrder state
   const [likes, setLikes] = useState({});
 
   // Fetch images
@@ -48,9 +47,16 @@ const ImageGallery = () => {
     setQuery(searchQuery);
   };
 
-  //Sort options
+  // Sort options
   const handleSortChange = (option) => {
-    setSortOption(option);
+    if (option === sortOption) {
+      // Toggle the sort order if the same option is clicked
+      setSortOrder((prevOrder) => (prevOrder === "desc" ? "asc" : "desc"));
+    } else {
+      // Set new option and default to descending
+      setSortOption(option);
+      setSortOrder("desc");
+    }
   };
 
   // Load More images
@@ -58,7 +64,7 @@ const ImageGallery = () => {
     dispatch(loadMoreImagesThunk());
   };
 
-  //Like count
+  // Like count
   useEffect(() => {
     const initialLikes = {};
     images.forEach((image) => {
@@ -67,7 +73,7 @@ const ImageGallery = () => {
     setLikes(initialLikes);
   }, [images]);
 
-  // Chmages in Liked
+  // Changes in Likes
   const handleLikeChange = (liked, imageId) => {
     setLikes((prevLikes) => ({
       ...prevLikes,
@@ -75,20 +81,26 @@ const ImageGallery = () => {
     }));
   };
 
-  //  Sort images
+  // Sort images
   const sortedImages = [...images].sort((a, b) => {
+    let comparison = 0;
     switch (sortOption) {
       case "width":
-        return b.width - a.width;
+        comparison = b.width - a.width;
+        break;
       case "height":
-        return b.height - a.height;
+        comparison = b.height - a.height;
+        break;
       case "date":
-        return new Date(b.created_at) - new Date(a.created_at);
+        comparison = new Date(b.created_at) - new Date(a.created_at);
+        break;
       case "likes":
-        return b.likes - a.likes;
+        comparison = b.likes - a.likes;
+        break;
       default:
-        return 0;
+        break;
     }
+    return sortOrder === "asc" ? comparison : -comparison;
   });
 
   return (
