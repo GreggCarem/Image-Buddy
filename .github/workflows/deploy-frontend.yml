@@ -24,7 +24,7 @@ jobs:
       - name: Build the project
         run: npm run build
 
-- name: Deploy to S3
+- name: Deploy 
   run: |
     cd dist
     aws s3 sync . s3://$AWS_S3_BUCKET --follow-symlinks --delete
