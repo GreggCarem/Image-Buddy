@@ -1,4 +1,30 @@
-- name: Deploy to S3
+name: Deploy Frontend
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build the project
+        run: npm run build
+
+     - name: Deploy to S3
   run: |
     cd dist
     aws s3 sync . s3://$AWS_S3_BUCKET --follow-symlinks --delete
