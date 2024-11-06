@@ -4,7 +4,9 @@ export const getImagesThunk = createAsyncThunk(
   "images/getRandomImagesFromApi",
   async () => {
     const request = await fetch(
-      `https://api.unsplash.com/photos/random?count=12&client_id=${import.meta.env.VITE_KEY}`
+      `https://api.unsplash.com/photos/random?count=12&client_id=${
+        import.meta.env.B8CXofjEnufckpfJwsSr6j38z0aSmSzNpyhIxYTf_bM
+      }`
     );
     if (request.ok) {
       const data = await request.json();
@@ -20,7 +22,9 @@ export const getSearchedImagesThunk = createAsyncThunk(
   async (query) => {
     if (query === "") {
       const request = await fetch(
-        `https://api.unsplash.com/photos/random?count=12&client_id=${import.meta.env.VITE_KEY}`
+        `https://api.unsplash.com/photos/random?count=12&client_id=${
+          import.meta.env.B8CXofjEnufckpfJwsSr6j38z0aSmSzNpyhIxYTf_bM
+        }`
       );
       if (request.ok) {
         const data = await request.json();
@@ -30,7 +34,9 @@ export const getSearchedImagesThunk = createAsyncThunk(
       }
     } else {
       const request = await fetch(
-        `https://api.unsplash.com/search/photos?client_id=${import.meta.env.VITE_KEY}&per_page=12&query=${query}`
+        `https://api.unsplash.com/search/photos?client_id=${
+          import.meta.env.B8CXofjEnufckpfJwsSr6j38z0aSmSzNpyhIxYTf_bM
+        }&per_page=12&query=${query}`
       );
       if (request.ok) {
         const data = await request.json();
@@ -51,7 +57,9 @@ export const loadMoreImagesThunk = createAsyncThunk(
 
     if (query === "") {
       const request = await fetch(
-        `https://api.unsplash.com/photos/random?count=12&page=${page}&client_id=${import.meta.env.VITE_KEY}`
+        `https://api.unsplash.com/photos/random?count=12&page=${page}&client_id=${
+          import.meta.env.B8CXofjEnufckpfJwsSr6j38z0aSmSzNpyhIxYTf_bM
+        }`
       );
       if (request.ok) {
         const data = await request.json();
@@ -61,7 +69,9 @@ export const loadMoreImagesThunk = createAsyncThunk(
       }
     } else {
       const request = await fetch(
-        `https://api.unsplash.com/search/photos?client_id=${import.meta.env.VITE_KEY}&per_page=12&page=${page}&query=${query}`
+        `https://api.unsplash.com/search/photos?client_id=${
+          import.meta.env.B8CXofjEnufckpfJwsSr6j38z0aSmSzNpyhIxYTf_bM
+        }&per_page=12&page=${page}&query=${query}`
       );
       if (request.ok) {
         const data = await request.json();
