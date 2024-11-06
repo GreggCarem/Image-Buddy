@@ -23,4 +23,3 @@ deploy-frontend.yml
 *.njsproj
 *.sln
 *.sw?
-.env
