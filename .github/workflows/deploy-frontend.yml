@@ -29,10 +29,10 @@ jobs:
         with:
           args: --acl public-read --follow-symlinks --delete
         env:
-          AWS_S3_BUCKET: ${{ secrets.imagebuddy }}
-          AWS_ACCESS_KEY_ID: ${{ secrets.AKIAU6GDY52SCEGD2MNB }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.NPIKRMxOoh4g3F/I2rDzhvr5aC03yG7L418LIP1f }}
-          AWS_REGION: ${{ secrets.Europe (Stockholm) eu-north-1 }}
+          AWS_S3_BUCKET: ${{ secrets.AWS_BUCKET_NAME }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: ${{ secrets.AWS_REGION }}
 
       - name: Run Cypress tests
         run: npm run cypress:run
