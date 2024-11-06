@@ -12,7 +12,7 @@ dist
 dist-ssr
 *.local
 deploy-frontend.yml
-*.github
+.github/workflows/
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
